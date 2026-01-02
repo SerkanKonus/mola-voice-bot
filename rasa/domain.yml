@@ -2,46 +2,205 @@ version: "3.1"
 
 intents:
   - greet
+  - goodbye
   - fiyat_sorgula
+  - musaitlik_sor
+  - oda_tipi_sor
+  - pansiyon_sor
+  - iptal_politika_sor
+  - cocuk_politika_sor
+  - transfer_sor
+  - tesis_sor
+  - aktivite_sor
+  - odeme_sor
+  - ozel_istek
   - sss_sor
   - etkinlik_sor
   - out_of_scope
+  - rezervasyon_yap
+  - affirm
+  - deny
 
 entities:
   - tarih
-  - kisi
+  - kisi_sayisi
+  - oda_tipi
+  - pansiyon_tipi
+  - cocuk_yas
 
 slots:
-  tarih:
+  tarih_baslangic:
     type: text
+    influence_conversation: true
     mappings:
       - type: from_entity
         entity: tarih
-  kisi:
+        conditions:
+          - active_loop: fiyat_form
+            requested_slot: tarih_baslangic
+      - type: from_text
+        conditions:
+          - active_loop: fiyat_form
+            requested_slot: tarih_baslangic
+  
+  tarih_bitis:
     type: text
+    influence_conversation: false
     mappings:
       - type: from_entity
-        entity: kisi
+        entity: tarih
+  
+  kisi_sayisi:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: kisi_sayisi
+        conditions:
+          - active_loop: fiyat_form
+            requested_slot: kisi_sayisi
+      - type: from_text
+        conditions:
+          - active_loop: fiyat_form
+            requested_slot: kisi_sayisi
+  
+  cocuk_yaslari:
+    type: list
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: cocuk_yas
+      - type: from_text
+        conditions:
+          - active_loop: fiyat_form
+            requested_slot: cocuk_yaslari
+  
+  oda_tipi:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: oda_tipi
+      - type: from_text
+        conditions:
+          - active_loop: fiyat_form
+            requested_slot: oda_tipi
+  
+  pansiyon_tipi:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: pansiyon_tipi
+      - type: from_text
+        conditions:
+          - active_loop: fiyat_form
+            requested_slot: pansiyon_tipi
+  
+  erken_giris_gec_cikis:
+    type: bool
+    influence_conversation: true
+    mappings:
+      - type: from_intent
+        intent: affirm
+        value: true
+        conditions:
+          - active_loop: fiyat_form
+            requested_slot: erken_giris_gec_cikis
+      - type: from_intent
+        intent: deny
+        value: false
+        conditions:
+          - active_loop: fiyat_form
+            requested_slot: erken_giris_gec_cikis
+  
+  conversation_stage:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: custom
 
-# BURASI ÇOK KRİTİK: Python kodlarını burada tanıtmalısın
+forms:
+  fiyat_form:
+    required_slots:
+      - tarih_baslangic
+      - kisi_sayisi
+
+responses:
+  utter_greet:
+    - text: "Merhaba, ben Mola İstanbul Yapay Zeka müşteri temsilciniz Molly. Nasıl yardımcı olabilirim?"
+  
+  utter_goodbye:
+    - text: "Bizi tercih ettiğiniz için teşekkürler, iyi günler dilerim!"
+    - text: "Görüşmek üzere, iyi günler!"
+  
+  utter_checking:
+    - text: "Bir bakayım..."
+    - text: "Hemen kontrol ediyorum..."
+    - text: "Şimdi sistemden bakıyorum..."
+  
+  utter_ask_tarih_baslangic:
+    - text: "Hangi tarih aralığını düşünüyorsunuz?"
+    - text: "Hangi tarihler için bakayım?"
+  
+  utter_ask_kisi_sayisi:
+    - text: "Kaç yetişkin olacaksınız?"
+    - text: "Kaç kişi kalacaksınız?"
+  
+  utter_ask_cocuk_yaslari:
+    - text: "Çocuklarınız varsa yaşlarını öğrenebilir miyim?"
+    - text: "Beraberinizdeki çocukların yaşlarını alabilir miyim?"
+  
+  utter_ask_pansiyon_tipi:
+    - text: "Pansiyon tercihiniz nedir? Sadece Oda, Oda Kahvaltı veya Yarım Pansiyon?"
+    - text: "Hangi pansiyonu tercih edersiniz? Sadece Oda, Oda Kahvaltı ya da Yarım Pansiyon var."
+  
+  utter_ask_erken_giris_gec_cikis:
+    - text: "Erken giriş ve geç çıkış (09:00 giriş, ertesi gün 23:00 çıkış) imkanımız var, ilginizi çeker mi?"
+    - text: "Erken girip geç çıkmak ister misiniz? 09:00'da giriş, ertesi gün 23:00'e kadar kalabilirsiniz."
+  
+  utter_out_of_scope:
+    - text: "Ben sadece Mola İstanbul hakkında yardımcı olabilirim efendim. Tesisimizle ilgili başka bir sorunuz var mı?"
+  
+  utter_sss_giris_cikis:
+    - text: "Giriş saatimiz 09:00, çıkış saatimiz ertesi gün 23:00. Oldukça esnek bir vaktimiz var!"
+  
+  utter_sss_evcil_hayvan:
+    - text: "Maalesef evcil hayvan kabul edemiyoruz efendim."
+  
+  utter_sss_otopark:
+    - text: "Ücretsiz otoparkımız mevcut."
+  
+  utter_sss_wifi:
+    - text: "Ücretsiz WiFi hizmetimiz tüm tesiste kullanılabilir."
+  
+  utter_sss_havuz:
+    - text: "Kadın ve erkek havuzlarımız ayrı. Aquapark bazı günler kadınlara özel kullanıma açık."
+  
+  utter_sss_sigara:
+    - text: "Odalarda sigara yasak, balkon ve teraslarda içebilirsiniz."
+  
+  utter_sss_bebek_yatagi:
+    - text: "0-3 yaş için bebek yatağımız mevcut, ücretsiz sağlıyoruz."
+  
+  utter_sss_vergiler:
+    - text: "Tüm vergiler fiyata dahil. Ek ödeme rezervasyon sırasında alınır."
+  
+  utter_default:
+    - text: "Tekrar söyler misiniz?"
+    - text: "Anlayamadım, başka türlü anlatabilir misiniz?"
+
 actions:
   - action_fiyat_sorgula
   - action_etkinlik_sorgula
   - action_sss_yanitla
+  - action_quick_price_check
+  - action_search_faq
+  - action_get_board_comparison
+  - action_get_room_types
+  - action_rezervasyon_onay
+  - validate_fiyat_form
 
-responses:
-  utter_greet:
-    - text: "Merhaba, ben Mola İstanbul müşteri temsilciniz Molly. Nasıl yardımcı olabilirim?"
-
-  utter_sss_giris_cikis:
-    - text: "Giriş sabah 09:00, çıkış ertesi gün 23:00'e kadar. Oldukça esnek bir vaktimiz var!"
-
-  utter_sss_evcil_hayvan:
-    - text: "Maalesef evcil hayvan kabul edemiyoruz efendim. Başka bir sorunuz var mı?"
-
-  utter_dolgu_fiyat:
-    - text: "Hmmm, bir bakayım... Hemen kontrol ediyorum."
-    - text: "Hemen sistemden fiyatları çekiyorum, bir saniye rica ederim..."
-
-  utter_out_of_scope:
-    - text: "Ben sadece Mola İstanbul hakkında yardımcı olabilirim efendim. Tesisimizle ilgili başka bir sorunuz var mı?"
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

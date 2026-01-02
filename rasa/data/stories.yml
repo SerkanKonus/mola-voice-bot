@@ -1,6 +1,119 @@
 version: "3.1"
+
 stories:
-  - story: fiyat sorgulama akisi
+  - story: Selamlama ve Fiyat Sorgulama Akışı
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: fiyat_sorgula
+      - action: fiyat_form
+      - active_loop: fiyat_form
+      - active_loop: null
+      - action: action_quick_price_check
+      - intent: affirm
+      - action: utter_ask_pansiyon_tipi
+
+  - story: Doğrudan Fiyat Sorgulama
     steps:
       - intent: fiyat_sorgula
-      - action: action_fiyat_sorgula
+      - action: fiyat_form
+      - active_loop: fiyat_form
+      - active_loop: null
+      - action: action_quick_price_check
+
+  - story: SSS Sonrası Fiyat
+    steps:
+      - intent: sss_sor
+      - action: action_search_faq
+      - intent: fiyat_sorgula
+      - action: fiyat_form
+      - active_loop: fiyat_form
+
+  - story: Oda Tipi Sorusu Sonrası Rezervasyon
+    steps:
+      - intent: oda_tipi_sor
+      - action: action_get_room_types
+      - intent: fiyat_sorgula
+      - action: fiyat_form
+      - active_loop: fiyat_form
+
+  - story: Pansiyon Karşılaştırma Sonrası Fiyat
+    steps:
+      - intent: pansiyon_sor
+      - action: action_get_board_comparison
+      - intent: fiyat_sorgula
+      - action: fiyat_form
+      - active_loop: fiyat_form
+
+  - story: Müsaitlik Kontrolü
+    steps:
+      - intent: musaitlik_sor
+      - action: action_quick_price_check
+
+  - story: Etkinlik Sonrası Rezervasyon Dönüş
+    steps:
+      - intent: etkinlik_sor
+      - action: action_etkinlik_sorgula
+      - intent: fiyat_sorgula
+      - action: fiyat_form
+      - active_loop: fiyat_form
+
+  - story: Transfer Sorusu
+    steps:
+      - intent: transfer_sor
+      - action: action_search_faq
+
+  - story: Çocuk Politikası Sorusu
+    steps:
+      - intent: cocuk_politika_sor
+      - action: action_search_faq
+
+  - story: İptal Politikası Sorusu
+    steps:
+      - intent: iptal_politika_sor
+      - action: action_search_faq
+
+  - story: Tesis Bilgisi Sorusu
+    steps:
+      - intent: tesis_sor
+      - action: action_search_faq
+
+  - story: Ödeme Sorusu
+    steps:
+      - intent: odeme_sor
+      - action: action_search_faq
+
+  - story: Özel İstek
+    steps:
+      - intent: ozel_istek
+      - action: action_search_faq
+
+  - story: Tam Rezervasyon Akışı
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: fiyat_sorgula
+      - action: fiyat_form
+      - active_loop: fiyat_form
+      - active_loop: null
+      - action: action_quick_price_check
+      - intent: affirm
+      - action: utter_ask_pansiyon_tipi
+      - intent: pansiyon_sor
+        entities:
+          - pansiyon_tipi: "oda kahvaltı"
+      - slot_was_set:
+        - pansiyon_tipi: "oda kahvaltı"
+      - action: utter_ask_erken_giris_gec_cikis
+      - intent: affirm
+      - slot_was_set:
+        - erken_giris_gec_cikis: true
+      - action: action_rezervasyon_onay
+
+  - story: Kapsam Dışı Soru Sonrası Devam
+    steps:
+      - intent: out_of_scope
+      - action: utter_out_of_scope
+      - intent: fiyat_sorgula
+      - action: fiyat_form
+      - active_loop: fiyat_form

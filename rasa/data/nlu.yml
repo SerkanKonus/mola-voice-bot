@@ -8,24 +8,288 @@ nlu:
     - Merhabalar
     - Merhaba Molly
     - Hey
-    - Madhava
     - Sesim geliyor mu?
     - Orada mısın?
+    - İyi günler
+    - Günaydın
+    - İyi akşamlar
+    - Selamünaleyküm
+    - Alo
+    - Beni duyuyor musunuz
+
+- intent: goodbye
+  examples: |
+    - görüşürüz
+    - iyi günler
+    - kapatıyorum
+    - teşekkürler bay bay
+    - güle güle
+    - hoşçakal
+    - sonra görüşürüz
+    - bye
+    - kapatalım
+    - tamam teşekkürler
+
+- intent: affirm
+  examples: |
+    - evet
+    - tamam
+    - olur
+    - isterim
+    - kabul
+    - evet lütfen
+    - tabii
+    - kesinlikle
+    - hayır
+    - peki
+    - anlaştık
+    - iyi
+    - güzel
+
+- intent: deny
+  examples: |
+    - hayır
+    - istemiyorum
+    - olmaz
+    - gerek yok
+    - hayır teşekkürler
+    - sonra
+    - belki sonra
+    - şimdi olmaz
+    - vazgeçtim
 
 - intent: fiyat_sorgula
   examples: |
+    - fiyatlar ne kadar?
     - [15 ocak](tarih) tarihinde fiyatlar ne kadar?
-    - [2 kişi](kisi) için ücret ne olur?
-    - [yarın](tarih) için [2 yetişkin](kisi) ne kadar?
+    - [2 kişi](kisi_sayisi) için ücret ne olur?
+    - [yarın](tarih) için [2 yetişkin](kisi_sayisi) ne kadar?
     - [haftaya cumartesi](tarih) konaklama bedeli nedir?
     - gecelik maliyet nedir?
     - fiyatlarınız hakkında bilgi alabilir miyim?
-    - [3 kişi](kisi) kalacağız fiyat ne olur?
+    - [3 kişi](kisi_sayisi) kalacağız fiyat ne olur?
+    - bu akşam için fiyat?
+    - [cuma](tarih) gecesi kaç para?
+    - [2 gece](tarih) [4 kişi](kisi_sayisi) kalırsak?
+    - hafta sonu fiyatı nedir?
+    - [10-15 ocak](tarih) arası ücret?
+    - [bir haftalık](tarih) konaklama ne tutar?
+    - sezonluk fiyatlarınız?
+    - [tek kişilik](kisi_sayisi) oda fiyatı?
+    - [çift kişilik](kisi_sayisi) ne kadar?
+    - en ucuz odanız ne kadar?
+    - fiyat listesi görebilir miyim?
+    - [yarın](tarih) gelsem ne öderim?
+    - bu gece için oda var mı ne kadar?
+    - [2 yetişkin 1 çocuk](kisi_sayisi) kaç lira?
+    - [üç gece](tarih) konaklama fiyatı?
+    - [15 şubat](tarih) civarı fiyatlar nasıl?
+    - sezon fiyatları ne kadar?
+    - [bir aylık](tarih) konaklama yapabiliyor muyuz?
+
+- intent: musaitlik_sor
+  examples: |
+    - [yarın](tarih) [deluxe oda](oda_tipi) var mı?
+    - [15 ocak'ta](tarih) [iki kişilik](kisi_sayisi) oda müsait mi?
+    - [haftaya cumartesi](tarih) boş odanız var mı?
+    - [bu cuma](tarih) [aile odası](oda_tipi) kaldı mı?
+    - [20-25 ocak](tarih) arası müsaitlik var mı?
+    - bugün için oda var mı?
+    - [hafta sonu](tarih) boş yer var mı?
+    - [şubat ayı](tarih) için rezervasyon alıyor musunuz?
+    - [perşembe](tarih) gecesi yer bulabilir miyim?
+    - [pazartesi](tarih) giriş yapabilir miyim?
+    - [executive room](oda_tipi) müsait mi?
+    - [family suite](oda_tipi) var mı elinizde?
+    - [superior oda](oda_tipi) boş mu?
+    - [4 kişilik](kisi_sayisi) oda bulabilir misiniz?
+    - [geniş oda](oda_tipi) kaldı mı?
+    - doluluk durumunuz nasıl?
+    - [bayram](tarih) için yer var mı?
+    - [yılbaşı](tarih) doldu mu?<br/>    - son dakika için oda bulabiliyor musunuz?
+    - bu akşam için acil oda lazım
+
+- intent: oda_tipi_sor
+  examples: |
+    - hangi oda tipleriniz var?
+    - odaların özellikleri nedir?
+    - en büyük oda hangisi?
+    - [family room](oda_tipi) kapasitesi ne kadar?
+    - kaç kişilik odalar var?
+    - oda çeşitleriniz neler?
+    - oda seçeneklerini öğrenebilir miyim?
+    - deluxe ile executive arasındaki fark ne?
+    - premium oda ne demek?
+    - superior odada neler var?
+    - standart oda özellikleri?
+    - suite odalarınız var mı?
+    - aile odası kaç kişilik?
+    - en lüks odanız hangisi?
+    - odaların metrekaresi ne kadar?
+    - hangi odalarda balkon var?
+    - deniz manzaralı oda var mı?
+    - bahçe manzaralı odalar?
+    - jakuzili oda var mı?
+    - en konforlu odanız hangisi?
+
+- intent: pansiyon_sor
+  examples: |
+    - hangi pansiyon seçenekleri var?
+    - yarım pansiyon ne demek?
+    - kahvaltı dahil mi?
+    - her şey dahil var mı?
+    - erken giriş geç çıkış nedir?
+    - oda kahvaltı nedir?
+    - sadece oda ne demek?
+    - tam pansiyon var mı?
+    - ultra herşey dahil var mı?
+    - pansiyon çeşitleriniz?
+    - BB HB fark nedir?
+    - board type seçenekleri?
+    - kahvaltı saati kaç?
+    - öğle yemeği dahil mi?
+    - akşam yemeği var mı?
+    - içecekler dahil mi?
+    - alkolsüz içecek?
+    - alkollü içecek ücretli mi?
+    - room service var mı?
+    - yemek saatleri nedir?
+    - açık büfe mi?
+
+- intent: iptal_politika_sor
+  examples: |
+    - rezervasyonu iptal edebilir miyim?
+    - iptal ücreti var mı?
+    - ne zaman iptal edebilirim?
+    - cancellation policy nedir?
+    - ücret iadesi alabilir miyim?
+    - rezervasyonu değiştirebilir miyim?
+    - kaç gün önceden iptal?
+    - iptal kurallarınız neler?
+    - rezervasyon iptali nasıl?
+    - para iadesi yapılıyor mu?
+    - iptal edilebilir mi?
+    - esnek iptal var mı?
+    - ücretsiz iptal süresi?
+    - son iptal ne zaman?
+
+- intent: cocuk_politika_sor
+  examples: |
+    - çocuk indirimi var mı?
+    - kaç yaşına kadar ücretsiz?
+    - çocuk havuzu var mı?
+    - çocuk fiyatı ne kadar?
+    - bebek ücretsiz mi?
+    - çocuk yaşları nasıl hesaplanıyor?
+    - çocuk kulübü var mı?
+    - mini club kaç yaşından?
+    - kaç yaş ücretsiz?
+    - çocuklara indirim yapıyor musunuz?
+    - çocuk animasyonu var mı?
+    - bebek yatağı var mı?
+    - mama sandalyesi veriliyor mu?
+    - çocuk menüsü var mı?
+    - kids club saatleri?
+
+- intent: transfer_sor
+  examples: |
+    - havalimanı transferi var mı?
+    - transfer ücreti ne kadar?
+    - nasıl ulaşabilirim?
+    - servis var mı?
+    - shuttle service?
+    - havaalanına kaç km?
+    - araç gönderiyormr musunuz?
+    - transfer rezervasyonu?
+    - shuttle saatleri?
+    - özel araç var mı?
+    - toplu taşıma ile nasıl gelirim?
+    - taksi ücreti ne kadar?
+    - ulaşım seçenekleri?
+    - en yakın havalimanı?
+
+- intent: tesis_sor
+  examples: |
+    - spa var mı?
+    - havuz saatleri nedir?
+    - fitness merkezi var mı?
+    - çocuk kulübü kaç yaşından?
+    - hangi tesisler var?
+    - restaurant sayısı?
+    - bar var mı?
+    - plaj var mı?
+    - hamam var mı?
+    - sauna mevcut mu?
+    - masaj yapılıyor mu?
+    - spor salonu açık mı?
+    - tenis kortu var mı?
+    - oyun odası?
+    - diskotek var mı?
+    - eğlence merkezleri?
+    - otopark ücretsiz mi?
+
+- intent: aktivite_sor
+  examples: |
+    - bu hafta konser var mı?
+    - etkinlik takviminde ne var?
+    - tarkan konseri ne zaman?
+    - akşamları bir eğlence oluyor mu?
+    - çocuk kulübü etkinliği var mı?
+    - animasyon programı?
+    - gece gösterileri?
+    - canlı müzik var mı?
+    - ne tür aktiviteler var?
+    - su sporları?
+    - dalış yapılabilir mi?
+    - yoga dersi var mı?
+    - gece kulübü?
+    - dans gösterisi?
+
+- intent: odeme_sor
+  examples: |
+    - hangi kartları kabul ediyorsunuz?
+    - taksit yapabilir miyim?
+    - kapora ne kadar?
+    - ön ödeme gerekiyor mu?
+    - nakit ödeme?
+    - kredi kartı geçerli mi?
+    - havale yapabilir miyim?
+    - online ödeme?
+    - kapıda ödeme?
+    - ne zaman öderim?
+    - depozit alınıyor mu?
+    - kefalet bedeli?
+
+- intent: ozel_istek
+  examples: |
+    - doğum günü pastası istiyorum
+    - balayı paketiniz var mı?
+    - oda süslemesi yapılır mı?
+    - romantik akşam yemeği?
+    - sürpriz organizasyon?
+    - özel menü?
+    - anniversary kutlama?
+    - balon süsleme?
+    - çiçek istiyorum
+    - şampanya servisi?
+
+- intent: rezervasyon_yap
+  examples: |
+    - rezervasyon yapmak istiyorum
+    - yer ayırtmak istiyorum
+    - booking yapalım
+    - rezerve edebilir miyim?
+    - ayırtma yapmak istiyorum
+    - oda tutmak istiyorum
+    - rezervasyon yapabilir miyiz?
+    - yer ayırtalım
+    - book etmek istiyorum
+    - online rezervasyon?
 
 - intent: sss_sor
   examples: |
-    - [giriş saati]{"entity": "sss_tipi", "value": "saat"} kaç?
-    - [evcil hayvan]{"entity": "sss_tipi", "value": "hayvan"} yasak mı?
+    - [giriş saati]{\"entity\": \"sss_tipi\", \"value\": \"saat\"} kaç?
+    - [evcil hayvan]{\"entity\": \"sss_tipi\", \"value\": \"hayvan\"} yasak mı?
     - giriş saati kaç?
     - otelden ne zaman çıkış yapmalıyız?
     - evcil hayvan kabul ediyor musunuz?
@@ -33,6 +297,10 @@ nlu:
     - havuzlar ayrı mı?
     - kahvaltı dahil mi?
     - wi-fi hizmeti var mı?
+    - sigara içilebilir mi?
+    - bebek yatağı var mı?
+    - vergiler dahil mi?
+    - ekstra ücret var mı?
 
 - intent: etkinlik_sor
   examples: |
@@ -49,10 +317,8 @@ nlu:
     - pizza siparişi vermek istiyorum
     - başka bir otel önerir misin?
     - siyaset hakkında ne düşünüyorsun?
-
-- intent: goodbye
-  examples: |
-    - görüşürüz
-    - iyi günler
-    - kapatıyorum
-    - teşekkürler bay bay
+    - futbol maçı var mı?
+    - en yakın eczane neresi?
+    - doktor çağırabilir miyim?
+    - taksici numarası?
+    - restoran önerisi?

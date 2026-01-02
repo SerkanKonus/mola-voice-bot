@@ -1,16 +1,56 @@
 version: "3.1"
+
 rules:
-  - rule: Selamlama
+  - rule: Molly Selamlama
     steps:
       - intent: greet
       - action: utter_greet
 
-  - rule: Fiyat Sorgulama
+  - rule: Veda
     steps:
-      - intent: fiyat_sorgula
-      - action: action_fiyat_sorgula
+      - intent: goodbye
+      - action: utter_goodbye
+  
+  - rule: Kapsam Dışı Soru
+    steps:
+      - intent: out_of_scope
+      - action: utter_out_of_scope
 
   - rule: SSS Sorgulama
     steps:
       - intent: sss_sor
-      - action: action_sss_yanitla
+      - action: action_search_faq
+
+  - rule: Oda Tipleri Sorgulama
+    steps:
+      - intent: oda_tipi_sor
+      - action: action_get_room_types
+
+  - rule: Pansiyon Tipleri Sorgulama
+    steps:
+      - intent: pansiyon_sor
+      - action: action_get_board_comparison
+
+  - rule: Etkinlik Sorgulama
+    steps:
+      - intent: etkinlik_sor
+      - action: action_etkinlik_sorgula
+
+  - rule: Aktivite Sorgulama
+    steps:
+      - intent: aktivite_sor
+      - action: action_etkinlik_sorgula
+
+  - rule: Fiyat Form Başlat
+    steps:
+      - intent: fiyat_sorgula
+      - action: fiyat_form
+      - active_loop: fiyat_form
+
+  - rule: Fiyat Form Tamamla
+    condition:
+      - active_loop: fiyat_form
+    steps:
+      - action: fiyat_form
+      - active_loop: null
+      - action: action_quick_price_check

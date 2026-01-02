@@ -1,0 +1,185 @@
+{
+    "genel": {
+        "giris_cikis": {
+            "anahtar_kelimeler": [
+                "giriş",
+                "çıkış",
+                "check in",
+                "check out",
+                "saat kaç",
+                "ne zaman"
+            ],
+            "cevap": "Giriş saatimiz 09:00, çıkış saatimiz ertesi gün 23:00. Oldukça esnek bir vaktimiz var!"
+        },
+        "evcil_hayvan": {
+            "anahtar_kelimeler": [
+                "evcil hayvan",
+                "köpek",
+                "kedi",
+                "pet",
+                "hayvan"
+            ],
+            "cevap": "Maalesef evcil hayvan kabul edemiyoruz efendim."
+        },
+        "otopark": {
+            "anahtar_kelimeler": [
+                "otopark",
+                "park yeri",
+                "araç",
+                "park"
+            ],
+            "cevap": "Ücretsiz otoparkımız mevcut."
+        },
+        "wifi": {
+            "anahtar_kelimeler": [
+                "wifi",
+                "internet",
+                "wi-fi",
+                "kablosuz"
+            ],
+            "cevap": "Ücretsiz WiFi hizmetimiz tüm tesiste kullanılabilir."
+        },
+        "vergiler": {
+            "anahtar_kelimeler": [
+                "vergi",
+                "ekstra ücret",
+                "ek ödeme",
+                "dahil mi"
+            ],
+            "cevap": "Tüm vergiler fiyata dahil. Ek ödeme rezervasyon sırasında alınır."
+        }
+    },
+    "tesisler": {
+        "havuz": {
+            "anahtar_kelimeler": [
+                "havuz",
+                "yüzme",
+                "aquapark",
+                "havuzlar"
+            ],
+            "cevap": "Kadın ve erkek havuzlarımız ayrı. Aquapark bazı günler kadınlara özel kullanıma açık."
+        },
+        "sigara": {
+            "anahtar_kelimeler": [
+                "sigara",
+                "smoking",
+                "içilir mi"
+            ],
+            "cevap": "Odalarda sigara yasak, balkon ve teraslarda içebilirsiniz."
+        },
+        "bebek_yatagi": {
+            "anahtar_kelimeler": [
+                "bebek yatağı",
+                "bebek",
+                "yatak",
+                "karyola"
+            ],
+            "cevap": "0-3 yaş için bebek yatağımız mevcut, ücretsiz sağlıyoruz."
+        }
+    },
+    "rezervasyon": {
+        "iptal": {
+            "anahtar_kelimeler": [
+                "iptal",
+                "cancel",
+                "iade",
+                "geri alabilir"
+            ],
+            "cevap": "İptal edilebilir rezervasyonlarda 3 gün öncesine kadar ücretsiz iptal yapabilirsiniz. İptal edilemez tarifelerde iptal mümkün değil."
+        },
+        "kapora": {
+            "anahtar_kelimeler": [
+                "kapora",
+                "ön ödeme",
+                "peşinat",
+                "depozit"
+            ],
+            "cevap": "Rezervasyon onayı için ön ödeme alınır. Detaylar rezervasyon sırasında paylaşılır."
+        }
+    },
+    "pansiyon": {
+        "sadece_oda": {
+            "anahtar_kelimeler": [
+                "sadece oda",
+                "RO",
+                "room only"
+            ],
+            "cevap": "Sadece Oda pansiyonunda konaklama dahil, yemekler dahil değil. Giriş 15:00, Çıkış 12:00."
+        },
+        "oda_kahvalti": {
+            "anahtar_kelimeler": [
+                "oda kahvaltı",
+                "BB",
+                "bed and breakfast",
+                "kahvaltı dahil"
+            ],
+            "cevap": "Oda Kahvaltı pansiyonunda konaklama ve açık büfe kahvaltı dahil. Giriş 15:00, Çıkış 12:00."
+        },
+        "yarim_pansiyon": {
+            "anahtar_kelimeler": [
+                "yarım pansiyon",
+                "HB",
+                "half board"
+            ],
+            "cevap": "Yarım Pansiyonda konaklama, açık büfe kahvaltı ve akşam yemeği dahil. Giriş 15:00, Çıkış 12:00."
+        },
+        "erken_giris_gec_cikis": {
+            "anahtar_kelimeler": [
+                "erken giriş",
+                "geç çıkış",
+                "ECLC",
+                "early check in",
+                "late check out"
+            ],
+            "cevap": "Erken Giriş Geç Çıkış seçeneğinde 09:00'da giriş, ertesi gün 23:00'e kadar çıkış yapabilirsiniz."
+        }
+    },
+    "ulaşım": {
+        "havalimani": {
+            "anahtar_kelimeler": [
+                "havalimanı",
+                "airport",
+                "nasıl gidilir",
+                "mesafe"
+            ],
+            "cevap": "İstanbul Havalimanı ve Sabiha Gökçen Havalimanı'na yakınız. Transfer hizmeti için rezervasyon sırasında bilgi verebiliriz."
+        },
+        "transfer": {
+            "anahtar_kelimeler": [
+                "transfer",
+                "servis",
+                "araç"
+            ],
+            "cevap": "Havalimanı transfer hizmetimiz mevcut. Ücret ve detaylar için rezervasyon sırasında bilgi vereceğim."
+        }
+    },
+    "cocuk": {
+        "cocuk_indirim": {
+            "anahtar_kelimeler": [
+                "çocuk indirimi",
+                "çocuk ücreti",
+                "çocuk fiyat"
+            ],
+            "cevap": "Çocuk fiyatlandırması yaşa göre değişiyor. Çocuklarınızın yaşlarını bildirirseniz size özel fiyat verebilirim."
+        },
+        "cocuk_kulubu": {
+            "anahtar_kelimeler": [
+                "çocuk kulübü",
+                "mini club",
+                "kids club"
+            ],
+            "cevap": "Çocuk kulübümüz ve animasyon programlarımız mevcut. Detaylar için tesise geldikten sonra bilgi verilir."
+        }
+    },
+    "odeme": {
+        "kredi_karti": {
+            "anahtar_kelimeler": [
+                "kredi kartı",
+                "ödeme",
+                "kart",
+                "taksit"
+            ],
+            "cevap": "Kredi kartı ile ödeme kabul ediyoruz. Taksit seçenekleri rezervasyon sırasında görüntülenebilir."
+        }
+    }
+}
