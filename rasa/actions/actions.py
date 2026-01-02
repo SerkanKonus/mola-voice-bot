@@ -391,3 +391,130 @@ class ActionSSSYanitla(Action):
         # Call search_faq
         action = ActionSearchFAQ()
         return action.run(dispatcher, tracker, domain)
+
+# ================== DOCS HELPERS (NEW) ==================
+DOCS_PATH = os.path.join(os.path.dirname(__file__), "../../docs")
+
+def get_filler_phrase(context="general"):
+    """Get random filler phrase based on context (from docs/00_satis-asistani-prompt.md)"""
+    fillers = {
+        "price": ["Hmmm, bir bakayım...", "Bir saniye, kontrol ediyorum..."],
+        "info": ["Şimdi bakalım...", "Hemen bakıyorum..."],
+        "thinking": ["Hmmm...", "Bir dakika..."],
+        "calculation": ["Hesaplıyorum...", "Bir saniye bekleyin..."],
+        "general": ["Hemen doğruluyorum...", "Bir dakika, hemen kontrol edeceğim..."]
+    }
+    return random.choice(fillers.get(context, fillers["general"]))
+
+def summarize_long_content(content, max_sentences=2):
+    """Summarize long tool output to 1-2 sentences"""
+    sentences = content.split(". ")
+    if len(sentences) <= max_sentences:
+        return content
+    # Return first N sentences
+    return ". ".join(sentences[:max_sentences]) + "."
+
+# ================== NEW ACTIONS FOR DOCS INTEGRATION ==================
+
+class ActionGetSpaBilgileri(Action):
+    """Get SPA/Wellness information from docs"""
+    def name(self) -> Text:
+        return "action_get_spa_bilgileri"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # Filler phrase
+        dispatcher.utter_message(text=get_filler_phrase("info"))
+        
+        # Summary from docs/04_spa-ve-wellness.md
+        response = "SPA alanlarımızda kadın/erkek ayrı Türk hamamı, Roma hamamı, sauna, buhar odası, terapi havuzları var. 28 farklı masaj seçeneği sunuyoruz. Rezervasyon AES'ten veya SPA resepsiyonundan yapılabilir. Hangisini merak ediyorsunuz?"
+        dispatcher.utter_message(text=response)
+        return []
+
+class ActionGetAktiviteBilgileri(Action):
+    """Get activity information from docs"""
+    def name(self) -> Text:
+        return "action_get_aktivite_bilgileri"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # Filler phrase
+        dispatcher.utter_message(text=get_filler_phrase("info"))
+        
+        # Summary from docs/05_aktiviteler-ve-eglence-genel.md
+        response = "Aquapark 365 gün açık, VR Center, Trambolin Park, Play Academy, Time Out kaçış oyunları, Macera Parkı ve spor sahalarımız var. Hangisinin detayını vereyim?"
+        dispatcher.utter_message(text=response)
+        return []
+
+class ActionGetYemekBilgileri(Action):
+    """Get restaurant/food information from docs"""
+    def name(self) -> Text:
+        return "action_get_yemek_bilgileri"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # Filler phrase
+        dispatcher.utter_message(text=get_filler_phrase("info"))
+        
+        # Summary from docs/03_yeme-icme-ve-lezzetler.md
+        response = "Ana restoranımız Mola Restoran açık büfe, İtalyan Moena odun fırını pizza, Osmanlı Mutfağı, Uzak Doğu sushi ve ramen, Snake House fast food. Hangisini tercih edersiniz?"
+        dispatcher.utter_message(text=response)
+        return []
+
+class ActionGetAesBilgileri(Action):
+    """Get AES application information from docs"""
+    def name(self) -> Text:
+        return "action_get_aes_bilgileri"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # Filler phrase
+        dispatcher.utter_message(text=get_filler_phrase("info"))
+        
+        # Summary from docs/11_mola-uygulamasi-ve-AES.md
+        response = "AES, check-in sonrası aktive edilir. Aktivite takvimini görebilir, rezervasyon yapabilir ve Play Academy'deki çocuğunuzu kamera ile canlı izleyebilirsiniz. Başka merak ettiğiniz var mı?"
+        dispatcher.utter_message(text=response)
+        return []
+
+class ActionSearchDocs(Action):
+    """Search in docs folder for information (generic)"""
+    def name(self) -> Text:
+        return "action_search_docs"
+    
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        # Filler phrase
+        dispatcher.utter_message(text=get_filler_phrase("info"))
+        
+        # Get last user message
+        query = tracker.latest_message.get('text', '').lower()
+        
+        # Simple keyword-based routing
+        if "spa" in query or "hamam" in query or "masaj" in query or "wellness" in query:
+            action = ActionGetSpaBilgileri()
+            return action.run(dispatcher, tracker, domain)
+        elif "aktivite" in query or "aquapark" in query or "vr" in query or "trambolin" in query:
+            action = ActionGetAktiviteBilgileri()
+            return action.run(dispatcher, tracker, domain)
+        elif "restoran" in query or "yemek" in query or "pizza" in query or "sushi" in query:
+            action = ActionGetYemekBilgileri()
+            return action.run(dispatcher, tracker, domain)
+        elif "aes" in query or "uygulama" in query or "kamera" in query:
+            action = ActionGetAesBilgileri()
+            return action.run(dispatcher, tracker, domain)
+        else:
+            # Generic response
+            dispatcher.utter_message(text="Size bu konuda yardımcı olabilirim. Tam olarak neyi merak ediyorsunuz?")
+        
+        return []
+

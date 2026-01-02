@@ -47,6 +47,67 @@
                 "dahil mi"
             ],
             "cevap": "Tüm vergiler fiyata dahil. Ek ödeme rezervasyon sırasında alınır."
+        },
+        "kasa": {
+            "anahtar_kelimeler": [
+                "kasa",
+                "safe",
+                "emanet",
+                "değerli"
+            ],
+            "cevap": "Odalarda kilitli kasa mevcut."
+        },
+        "seccade": {
+            "anahtar_kelimeler": [
+                "seccade",
+                "namaz",
+                "tesbih",
+                "ibadet"
+            ],
+            "cevap": "Odalarda seccade ve tesbih bulunur."
+        },
+        "camasir_makinesi": {
+            "anahtar_kelimeler": [
+                "çamaşır makinesi",
+                "yıkama",
+                "çamaşır"
+            ],
+            "cevap": "Tüm odalarda çamaşır makinesi var. Çamaşırhane hizmeti de ücretli olarak sunulur."
+        },
+        "mutfak": {
+            "anahtar_kelimeler": [
+                "mutfak",
+                "ocak",
+                "buzdolabı",
+                "bulaşık makinesi",
+                "fırın"
+            ],
+            "cevap": "Odalarda tam donanımlı mutfak var: retro buzdolabı, ocak, fırın, davlumbaz, bulaşık makinesi."
+        },
+        "oda_servisi": {
+            "anahtar_kelimeler": [
+                "oda servisi",
+                "room service",
+                "servis"
+            ],
+            "cevap": "7/24 oda servisi hizmeti ücretli olarak sunulur."
+        },
+        "balkon": {
+            "anahtar_kelimeler": [
+                "balkon",
+                "bahçe",
+                "veranda",
+                "teras"
+            ],
+            "cevap": "Odalarda balkon veya bahçe verandası bulunur."
+        },
+        "engelli": {
+            "anahtar_kelimeler": [
+                "engelli",
+                "disabled",
+                "tekerlekli sandalye"
+            ],
+            "cevap": "Engelli misafirlere uygun odalarımız bulunmaktadır."
         }
     },
     "tesisler": {
@@ -57,7 +118,23 @@
                 "aquapark",
                 "havuzlar"
             ],
-            "cevap": "Kadın ve erkek havuzlarımız ayrı. Aquapark bazı günler kadınlara özel kullanıma açık."
+            "cevap": "Kadın ve erkek havuzları tamamen ayrı. Aquapark bazı günler kadınlara özel kullanıma açık."
+        },
+        "havuz_gorunurluk": {
+            "anahtar_kelimeler": [
+                "kadın havuzu görünüyor",
+                "görülüyor mu",
+                "dışarıdan"
+            ],
+            "cevap": "Kadınlara ayrılan havuz dışarıdan veya odalardan görülmeyecek şekilde tasarlanmıştır."
+        },
+        "karma_havuz": {
+            "anahtar_kelimeler": [
+                "karma havuz",
+                "ortak havuz",
+                "beraber"
+            ],
+            "cevap": "Aquapark havuzları belirli gün ve saatlerde sadece kadınların kullanımına açılır, diğer zamanlarda karma kullanıma açıktır."
         },
         "sigara": {
             "anahtar_kelimeler": [
@@ -75,6 +152,15 @@
                 "karyola"
             ],
             "cevap": "0-3 yaş için bebek yatağımız mevcut, ücretsiz sağlıyoruz."
+        },
+        "saglik": {
+            "anahtar_kelimeler": [
+                "doktor",
+                "sağlık",
+                "revir",
+                "ilk yardım"
+            ],
+            "cevap": "İlk müdahaleyi yapabilecek sağlık personeli mevcuttur."
         }
     },
     "rezervasyon": {
@@ -104,7 +190,7 @@
                 "RO",
                 "room only"
             ],
-            "cevap": "Sadece Oda pansiyonunda konaklama dahil, yemekler dahil değil. Giriş 15:00, Çıkış 12:00."
+            "cevap": "Sadece Oda pansiyonunda konaklama dahil, yemekler dahil değil. Giriş 09:00, Çıkış ertesi gün 23:00."
         },
         "oda_kahvalti": {
             "anahtar_kelimeler": [
@@ -113,7 +199,7 @@
                 "bed and breakfast",
                 "kahvaltı dahil"
             ],
-            "cevap": "Oda Kahvaltı pansiyonunda konaklama ve açık büfe kahvaltı dahil. Giriş 15:00, Çıkış 12:00."
+            "cevap": "Oda Kahvaltı pansiyonunda konaklama ve açık büfe kahvaltı dahil. Giriş 09:00, Çıkış ertesi gün 23:00."
         },
         "yarim_pansiyon": {
             "anahtar_kelimeler": [
@@ -121,7 +207,7 @@
                 "HB",
                 "half board"
             ],
-            "cevap": "Yarım Pansiyonda konaklama, açık büfe kahvaltı ve akşam yemeği dahil. Giriş 15:00, Çıkış 12:00."
+            "cevap": "Yarım Pansiyonda konaklama, açık büfe kahvaltı ve akşam yemeği dahil. Giriş 09:00, Çıkış ertesi gün 23:00."
         },
         "erken_giris_gec_cikis": {
             "anahtar_kelimeler": [
@@ -134,7 +220,7 @@
             "cevap": "Erken Giriş Geç Çıkış seçeneğinde 09:00'da giriş, ertesi gün 23:00'e kadar çıkış yapabilirsiniz."
         }
     },
-    "ulaşım": {
+    "ulasim": {
         "havalimani": {
             "anahtar_kelimeler": [
                 "havalimanı",
@@ -150,7 +236,15 @@
                 "servis",
                 "araç"
             ],
-            "cevap": "Havalimanı transfer hizmetimiz mevcut. Ücret ve detaylar için rezervasyon sırasında bilgi vereceğim."
+            "cevap": "Havalimanı transfer hizmetimiz mevcut. Ücretli olup, önceden resepsiyon üzerinden rezervasyon yapılmalıdır."
+        },
+        "transfer_odeme": {
+            "anahtar_kelimeler": [
+                "transfer ücret",
+                "transfer para",
+                "şoför"
+            ],
+            "cevap": "Transfer ücretleri resepsiyondan ödenir; şoföre ödeme yapılmaz."
         }
     },
     "cocuk": {
@@ -166,9 +260,18 @@
             "anahtar_kelimeler": [
                 "çocuk kulübü",
                 "mini club",
-                "kids club"
+                "kids club",
+                "play academy"
             ],
-            "cevap": "Çocuk kulübümüz ve animasyon programlarımız mevcut. Detaylar için tesise geldikten sonra bilgi verilir."
+            "cevap": "Play Academy'de uzman ekip ve yüksek hijyen standartlarıyla çocuklar güvenli ortamda zaman geçirir. AES'ten kamera ile takip edebilirsiniz."
+        },
+        "cocuk_tuvalet": {
+            "anahtar_kelimeler": [
+                "çocuk tuvalet",
+                "wc",
+                "lavabo"
+            ],
+            "cevap": "Play Academy'de WC ve lavabolar çocuklara uygun tasarlanmıştır."
         }
     },
     "odeme": {
@@ -180,6 +283,292 @@
                 "taksit"
             ],
             "cevap": "Kredi kartı ile ödeme kabul ediyoruz. Taksit seçenekleri rezervasyon sırasında görüntülenebilir."
+        }
+    },
+    "aktiviteler": {
+        "aquapark_saat": {
+            "anahtar_kelimeler": [
+                "aquapark saat",
+                "aquapark açık",
+                "kaydırak",
+                "aquapark ne zaman"
+            ],
+            "cevap": "Aquapark 365 gün açık. Günlük saatler için AES uygulamasından kontrol edebilirsiniz."
+        },
+        "vr_center": {
+            "anahtar_kelimeler": [
+                "vr",
+                "sanal gerçeklik",
+                "oyun",
+                "vr center"
+            ],
+            "cevap": "VR Center'da farklı türlerde sanal gerçeklik oyunları var, 6 yaş ve üzeri kullanabilir."
+        },
+        "trambolin": {
+            "anahtar_kelimeler": [
+                "trambolin",
+                "trambo",
+                "zıplama"
+            ],
+            "cevap": "Farklı temalarda geniş trambolin parkımız var."
+        },
+        "time_out": {
+            "anahtar_kelimeler": [
+                "kaçış oyunu",
+                "escape",
+                "time out",
+                "escape room"
+            ],
+            "cevap": "4 farklı temada kaçış oyunu var: polisiye ve gerilim temaları dahil."
+        },
+        "macera_parki": {
+            "anahtar_kelimeler": [
+                "macera parkı",
+                "macera",
+                "park",
+                "adrenalin"
+            ],
+            "cevap": "Yüksek adrenalin aktiviteleri sunan açık hava macera parkurlarımız var."
+        },
+        "panayir": {
+            "anahtar_kelimeler": [
+                "panayır",
+                "lunapark",
+                "dönme dolap",
+                "çarpışan araba"
+            ],
+            "cevap": "Panayır ve lunapark alanımızda dönme dolap, çarpışan arabalar ve klasik atraksiyon oyunları var."
+        },
+        "spor_sahalari": {
+            "anahtar_kelimeler": [
+                "halı saha",
+                "basketbol",
+                "voleybol",
+                "futbol"
+            ],
+            "cevap": "Halı saha, basketbol ve voleybol sahalarımız mevcut."
+        },
+        "aktivite_kayit": {
+            "anahtar_kelimeler": [
+                "aktivite kayıt",
+                "nasıl katılırım",
+                "rezervasyon"
+            ],
+            "cevap": "Check-in sonrası AES uygulamasından aktivite saatleri, yerleri ve kontenjan bilgisi görülebilir ve kayıt yapılabilir."
+        }
+    },
+    "spa_wellness": {
+        "spa_alanlari": {
+            "anahtar_kelimeler": [
+                "spa alan",
+                "wellness",
+                "hamam",
+                "sauna",
+                "spa'da ne var"
+            ],
+            "cevap": "Kadın/erkek ayrı Türk hamamı, Roma hamamı, sauna, buhar odası, terapi havuzları var. Masaj ve bakımlar ücretlidir."
+        },
+        "masaj_cesitleri": {
+            "anahtar_kelimeler": [
+                "masaj",
+                "massage",
+                "bakım",
+                "kaç çeşit"
+            ],
+            "cevap": "28 farklı masaj seçeneği sunuyoruz: argan, köpük, kese, aromatik ritüeller. Rezervasyon gerekli."
+        },
+        "spa_rezervasyon": {
+            "anahtar_kelimeler": [
+                "spa rezervasyon",
+                "masaj randevu",
+                "spa kayıt"
+            ],
+            "cevap": "SPA ve masaj için AES uygulaması veya SPA resepsiyonu üzerinden rezervasyon yapabilirsiniz."
+        },
+        "tuz_odasi": {
+            "anahtar_kelimeler": [
+                "tuz odası",
+                "salt room"
+            ],
+            "cevap": "SPA alanlarımızda tuz odası bulunmaktadır."
+        },
+        "terapi_havuzu": {
+            "anahtar_kelimeler": [
+                "terapi havuzu",
+                "sıcak havuz",
+                "jakuzi"
+            ],
+            "cevap": "Kapalı-açık sıcak terapi havuzlarımız ve plunge pool'umuz mevcut."
+        }
+    },
+    "yemek_icme": {
+        "ana_restoran": {
+            "anahtar_kelimeler": [
+                "mola restoran",
+                "açık büfe",
+                "ana restoran"
+            ],
+            "cevap": "Mola Restoran, zengin açık büfe kahvaltı ve akşam yemeği sunar."
+        },
+        "italyan_restoran": {
+            "anahtar_kelimeler": [
+                "moena",
+                "pizza",
+                "italyan",
+                "makarna"
+            ],
+            "cevap": "Moena İtalyan Restoran'da odun fırınında pizza, makarna ve İtalyan spesiyalleri var. Rezervasyon önerilir."
+        },
+        "osmanlı": {
+            "anahtar_kelimeler": [
+                "osmanlı mutfağı",
+                "anadolu",
+                "türk yemeği"
+            ],
+            "cevap": "Osmanlı Mutfağı restoranımızda Anadolu ve Osmanlı mutfağı yemekleri sunulur."
+        },
+        "uzak_dogu": {
+            "anahtar_kelimeler": [
+                "sushi",
+                "ramen",
+                "uzak doğu",
+                "asya",
+                "dumpling"
+            ],
+            "cevap": "Uzak Doğu Mutfağı restoranımızda ramen, sushi, dumpling, teriyaki gibi lezzetler var."
+        },
+        "fast_food": {
+            "anahtar_kelimeler": [
+                "burger",
+                "pide",
+                "döner",
+                "fast food",
+                "snake house"
+            ],
+            "cevap": "Snake House'ta burger, pide, döner gibi fast food seçenekleri bulabilirsiniz."
+        },
+        "mado": {
+            "anahtar_kelimeler": [
+                "dondurma",
+                "tatlı",
+                "mado",
+                "pasta"
+            ],
+            "cevap": "Mado mağazamızda tatlı ve dondurma çeşitleri sunulur."
+        },
+        "kafe": {
+            "anahtar_kelimeler": [
+                "kafe",
+                "kahve",
+                "m cafe",
+                "cafe de mola"
+            ],
+            "cevap": "M Cafe, Cafe De Mola ve Göl Cafe gibi birçok kafe noktamız var."
+        },
+        "alakart_rezervasyon": {
+            "anahtar_kelimeler": [
+                "alakart rezervasyon",
+                "restoran rezervasyon"
+            ],
+            "cevap": "Alakart restoranlarımıza rezervasyon önerilir. Konaklama olmadan da rezervasyon yapılabilir."
+        }
+    },
+    "aes_uygulama": {
+        "aes_nedir": {
+            "anahtar_kelimeler": [
+                "AES nedir",
+                "akıllı eğlence",
+                "mola uygulaması",
+                "uygulama"
+            ],
+            "cevap": "AES (Akıllı Eğlence Sistemi), check-in sonrası aktive edilir. Aktivite takvimi, rezervasyon ve kamera hizmetiyle çocuğunuzu takip edebilirsiniz."
+        },
+        "kamera_hizmeti": {
+            "anahtar_kelimeler": [
+                "kamera",
+                "çocuk takip",
+                "izleme",
+                "canlı izle"
+            ],
+            "cevap": "Play Academy'deki çocuğunuzu AES uygulamasındaki kamera hizmeti ile canlı izleyebilirsiniz."
+        },
+        "bildirim": {
+            "anahtar_kelimeler": [
+                "bildirim",
+                "hatırlatma",
+                "notification"
+            ],
+            "cevap": "AES uygulaması kayıt yaptırdığınız aktiviteler için bildirim gönderir, kaçırmazsınız."
+        }
+    },
+    "kadin_programi": {
+        "kadin_gunu": {
+            "anahtar_kelimeler": [
+                "kadın günü",
+                "kadınlara özel",
+                "çarşamba"
+            ],
+            "cevap": "Her Çarşamba 09:00-18:00 kadınlara özel program var: aquapark, SPA, çay partisi ve eller havaya partisi."
+        }
+    },
+    "devremulk": {
+        "devremulk_nedir": {
+            "anahtar_kelimeler": [
+                "devre mülk",
+                "devremülk",
+                "lifecard",
+                "life card"
+            ],
+            "cevap": "Devre mülk, yılın belirli dönemleri için daire kullanım hakkıdır. 1+1, 2+1, 3+1 daire seçenekleri var."
+        }
+    },
+    "kurumsal": {
+        "kurumsal_etkinlik": {
+            "anahtar_kelimeler": [
+                "kurumsal etkinlik",
+                "toplantı",
+                "eğitim",
+                "kongre"
+            ],
+            "cevap": "Toplantı, eğitim, lansman, kongre için alanlarımız ve programlarımız var. Kurumsal satış ekibimiz detaylı bilgi verebilir."
+        },
+        "kongre_merkezi": {
+            "anahtar_kelimeler": [
+                "kongre merkezi",
+                "gösteri merkezi",
+                "amfi"
+            ],
+            "cevap": "Mola Kongre ve Gösteri Merkezi amfitiyatro düzeninde, büyük etkinlikler için uygundur."
+        }
+    },
+    "politikalar": {
+        "kvkk": {
+            "anahtar_kelimeler": [
+                "kvkk",
+                "veri",
+                "gizlilik",
+                "kişisel bilgi"
+            ],
+            "cevap": "Kişisel verileriniz KVKK kapsamında korunur. Detaylı bilgi için web sitemizden KVKK politikamıza ulaşabilirsiniz."
+        },
+        "cerez": {
+            "anahtar_kelimeler": [
+                "çerez",
+                "cookie",
+                "tracking"
+            ],
+            "cevap": "Sitemizde çerezler kullanılarak deneyim iyileştirilir. Tarayıcı ayarlarından çerezleri yönetebilirsiniz."
+        }
+    },
+    "ucretli_hizmetler": {
+        "ucretli_liste": {
+            "anahtar_kelimeler": [
+                "ücretli",
+                "ekstra ücret",
+                "para",
+                "hangi hizmetler"
+            ],
+            "cevap": "Konsept dışı yemekler, alakart restoranlar, masaj, terapi, kuaför, VR oyunları, çamaşırhane gibi hizmetler ücretlidir."
         }
     }
 }

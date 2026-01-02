@@ -20,6 +20,12 @@ intents:
   - rezervasyon_yap
   - affirm
   - deny
+  - spa_sor
+  - aktivite_detay_sor
+  - yemek_sor
+  - aes_sor
+  - devremulk_sor
+  - kurumsal_sor
 
 entities:
   - tarih
@@ -128,7 +134,7 @@ forms:
 
 responses:
   utter_greet:
-    - text: "Merhaba, ben Mola İstanbul Yapay Zeka müşteri temsilciniz Molly. Nasıl yardımcı olabilirim?"
+    - text: "Merhaba, ben Mola İstanbul müşteri temsilciniz Deniz. Nasıl yardımcı olabilirim?"
   
   utter_goodbye:
     - text: "Bizi tercih ettiğiniz için teşekkürler, iyi günler dilerim!"
@@ -189,6 +195,24 @@ responses:
   utter_default:
     - text: "Tekrar söyler misiniz?"
     - text: "Anlayamadım, başka türlü anlatabilir misiniz?"
+  
+  utter_spa_genel:
+    - text: "SPA alanlarımızda kadın/erkek ayrı Türk hamamı, sauna, terapi havuzları var. 28 çeşit masaj  hizmetimiz mevcut."
+  
+  utter_aktivite_genel:
+    - text: "Aquapark, VR Center, Trambolin Park, Play Academy gibi birçok aktivitemiz var. Hangisi ilginizi çeker?"
+  
+  utter_yemek_genel:
+    - text: "Ana restoranımız Mola Restoran, İtalyan Moena, Osmanlı Mutfağı, Uzak Doğu ve Snake House var. Hangisini merak ettiniz?"
+  
+  utter_aes_tanitim:
+    - text: "AES uygulaması ile aktiviteleri görebilir, rezervasyon yapabilir ve çocuğunuzu kamera ile takip edebilirsiniz."
+  
+  utter_devremulk_tanitim:
+    - text: "Devre mülk, yılın belirli dönemleri için daire kullanım hakkıdır. 1+1, 2+1, 3+1 seçeneklerimiz var."
+  
+  utter_kurumsal_tanitim:
+    - text: "Toplantı, eğitim, lansman, kongre için alanlarımız ve programlarımız var. Kurumsal satış ekibimiz detaylı bilgi verebilir."
 
 actions:
   - action_fiyat_sorgula
@@ -200,6 +224,11 @@ actions:
   - action_get_room_types
   - action_rezervasyon_onay
   - validate_fiyat_form
+  - action_search_docs
+  - action_get_spa_bilgileri
+  - action_get_aktivite_bilgileri
+  - action_get_yemek_bilgileri
+  - action_get_aes_bilgileri
 
 session_config:
   session_expiration_time: 60

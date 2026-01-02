@@ -54,3 +54,34 @@ rules:
       - action: fiyat_form
       - active_loop: null
       - action: action_quick_price_check
+
+  - rule: SPA Sorguları
+    steps:
+      - intent: spa_sor
+      - action: action_get_spa_bilgileri
+
+  - rule: Aktivite Detay Sorguları
+    steps:
+      - intent: aktivite_detay_sor
+      - action: action_get_aktivite_bilgileri
+
+  - rule: Yemek Sorguları
+    steps:
+      - intent: yemek_sor
+      - action: action_get_yemek_bilgileri
+
+  - rule: AES Sorguları
+    steps:
+      - intent: aes_sor
+      - action: action_get_aes_bilgileri
+
+  - rule: Devre Mülk Sorguları
+    steps:
+      - intent: devremulk_sor
+      - action: utter_devremulk_tanitim
+
+  - rule: Kurumsal Sorguları
+    steps:
+      - intent: kurumsal_sor
+      - action: utter_kurumsal_tanitim
+

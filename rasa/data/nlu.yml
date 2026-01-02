@@ -322,3 +322,157 @@ nlu:
     - doktor çağırabilir miyim?
     - taksici numarası?
     - restoran önerisi?
+
+- intent: spa_sor
+  examples: |
+    - spa'da neler var?
+    - massage yaptırabilir miyim?
+    - hamam var mı?
+    - saunalar nasıl?
+    - [kadın] [spa] var mı?
+    - wellness hizmetleri neler?
+    - masaj çeşitleri?
+    - [terapi havuzu] var mı?
+    - kil hidroterapi nedir?
+    - spa rezervasyonu gerekli mi?
+    - [tuz odası] var mı?
+    - buhar odası mevcut mu?
+    - [sıcak havuz] var mı?
+    - spa alanları kaç yaşından?
+    - masaj fiyatları ne kadar?
+    - hangi masajlar var?
+    - [köpük masajı] yapılıyor mu?
+    - [argan bakımı] nedir?
+    - yüz bakımı var mı?
+    - sauna kadın erkek ayrı mı?
+    - hamam ücretsiz mi?
+    - plunge pool nedir?
+    - kneipp havuzu ne demek?
+    - roma hamamı var mı?
+    - spa'da havuz var mı?
+
+- intent: aktivite_detay_sor
+  examples: |
+    - aquapark ne zaman açık?
+    - VR center hangi oyunlar var?
+    - trambolin park kaç yaşından?
+    - [play academy] kaç yaşına kadar?
+    - [time out kaçış oyunu] kaç kişilik?
+    - [macera parkı] nerede?
+    - panayırda neler var?
+    - lunapark açık mı?
+    - dönme dolap var mı?
+    - çarpışan arabalar mevcut mu?
+    - aquapark saatleri?
+    - aquapark 365 gün açık mı?
+    - kaydıraklar var mı?
+    - vr center kaç yaşından?
+    - sanal gerçeklik oyunları hangileri?
+    - trambolin ne kadar?
+    - arcade zone var mı?
+    - playstation oyun odası var mı?
+    - halı saha rezervasyon?
+    - basketbol sahası var mı?
+    - voleybol oynayabilir miyiz?
+    - spor sahaları hangileri?
+    - çocuk parkı nerede?
+    - göl park nedir?
+    - kuzey park ne?
+    - nostalji sokağı var mı?
+    - [play academy] ücretsiz mi?
+    - çocuk kulübü saatleri?
+    - aktivitelere nasıl kayıt olunur?
+    - AES'ten kayıt yapabilir miyim?
+
+- intent: yemek_sor
+  examples: |
+    - hangi restoranlar var?
+    - [İtalyan restoran] rezervasyon gerekli mi?
+    - [Osmanlı mutfağı] nerede?
+    - [açık büfe] ne zaman?
+    - [kahvaltı] saatleri?
+    - [akşam yemeği] nerede yenir?
+    - pizza var mı?
+    - sushi yapılıyor mu?
+    - [mola restoran] kaç kişilik?
+    - [moena] nerede?
+    - odun fırını pizza var mı?
+    - makarna çeşitleri?
+    - [uzak doğu] restoranı var mı?
+    - ramen yeniyor mu?
+    - dumpling var mı?
+    - teriyaki yapılıyor mu?
+    - [snake house] nedir?
+    - burger nerede?
+    - pide var mı?
+    - döner yapılıyor mu?
+    - [mado] var mı?
+    - dondurma çeşitleri?
+    - tatlı nerede?
+    - kafe var mı?
+    - [m cafe] nerede?
+    - [cafe de mola] açık mı?
+    - göl cafe var mı?
+    - alakart restorana rezervasyon?
+    - restoranlar ücretli mi?
+    - kahvaltı dahil mi?
+
+- intent: aes_sor
+  examples: |
+    - AES nedir?
+    - mola uygulaması nasıl kullanılır?
+    - çocuğumu görebilir miyim?
+    - kamera hizmeti var mı?
+    - aktivite kayıt nasıl yapılır?
+    - uygulama ücretsiz mi?
+    - AES'ten ne yapılır?
+    - akıllı eğlence sistemi nedir?
+    - çocuk takip edebilir miyim?
+    - canlı kamera var mı?
+    - bildirim geliyor mu?
+    - aktivite hatırlatması var mı?
+    - spa AES'ten ayırılır mı?
+    - uygulama check-in sonrası mı?
+    - hesap nasıl aktive edilir?
+
+- intent: devremulk_sor
+  examples: |
+    - devre mülk nedir?
+    - lifecard ne demek?
+    - hangi dönemler var?
+    - [bahçeli daire] var mı?
+    - kaç kişilik daireler var?
+    - 2+1 ne demek?
+    - 1+1 daire var mı?
+    - 3+1 kaç kişilik?
+    - zemin kat var mı?
+    - 1. kat daire?
+    - güney cephe var mı?
+    - kuzey batı yönü?
+    - hangi ayda giriş yapabilirim?
+    - birbirini takip eden haftalar?
+    - tek hafta alabilir miyim?
+    - lifecard fiyatları?
+    - devremülk nasıl satın alınır?
+
+- intent: kurumsal_sor
+  examples: |
+    - kurumsal etkinlik yapılır mı?
+    - toplantı salonu var mı?
+    - eğitim verebilir miyiz?
+    - kongre merkezi kapasitesi?
+    - lansman yapabiliyor muyuz?
+    - motivasyon kampı organize edilir mi?
+    - şirket toplantısı?
+    - workshop alanı var mı?
+    - konferans salonu?
+    - amfi tiyatro var mı?
+    - gösteri merkezi nedir?
+    - kurumsal paketler?
+    - takım çalışması aktiviteleri?
+    - outdoor etkinlik?
+    - kurumsal fiyat?
+    - kaç kişilik salon var?
+    - ses ışık sistemi var mı?
+    - projeksiyon var mı?
+
