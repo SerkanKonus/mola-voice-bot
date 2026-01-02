@@ -1,0 +1,47 @@
+version: "3.1"
+
+intents:
+  - greet
+  - fiyat_sorgula
+  - sss_sor
+  - etkinlik_sor
+  - out_of_scope
+
+entities:
+  - tarih
+  - kisi
+
+slots:
+  tarih:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: tarih
+  kisi:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: kisi
+
+# BURASI ÇOK KRİTİK: Python kodlarını burada tanıtmalısın
+actions:
+  - action_fiyat_sorgula
+  - action_etkinlik_sorgula
+  - action_sss_yanitla
+
+responses:
+  utter_greet:
+    - text: "Merhaba, ben Mola İstanbul müşteri temsilciniz Molly. Nasıl yardımcı olabilirim?"
+
+  utter_sss_giris_cikis:
+    - text: "Giriş sabah 09:00, çıkış ertesi gün 23:00'e kadar. Oldukça esnek bir vaktimiz var!"
+
+  utter_sss_evcil_hayvan:
+    - text: "Maalesef evcil hayvan kabul edemiyoruz efendim. Başka bir sorunuz var mı?"
+
+  utter_dolgu_fiyat:
+    - text: "Hmmm, bir bakayım... Hemen kontrol ediyorum."
+    - text: "Hemen sistemden fiyatları çekiyorum, bir saniye rica ederim..."
+
+  utter_out_of_scope:
+    - text: "Ben sadece Mola İstanbul hakkında yardımcı olabilirim efendim. Tesisimizle ilgili başka bir sorunuz var mı?"

@@ -1,0 +1,2 @@
+rasa run actions &
+exit

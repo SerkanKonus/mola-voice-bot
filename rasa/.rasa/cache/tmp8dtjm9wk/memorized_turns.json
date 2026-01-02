@@ -1,0 +1,12 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhuLg4vji/qLY2FgAi+xx6": "action_sss_yanitla",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEqhuLg4vji/qJY4U0CqKxPzMktyEvEYFQsAtbk5Xg==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taS2NhYA6dwbhQ==": "utter_greet",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taSWgBmlJSWpRfEQpbhMiAUAQvc0lw==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taSWgBmlJSWpRfEQpeSZQMAVaZmViSXxxflF6aU5ibW1sQAw2FHN": "utter_dolgu_fiyat",
+    "eJydjlEKgCAQRK/iATqBV4lYpDZZMI11Nwjx7kn1b/Q3A28eM5Y6mLIzHuBmoRStKU+A6Da05i2BsmBsrGbkxlBsVazxjCi141ARZHjQf4bOi5VOJ5ATew3u25slBa9wD7u+6QKT6nDB": "action_fiyat_sorgula",
+    "eJyljlEKgCAQRK/iATqBV4lYpDYRTGNdgxDvnqQ/fRn1Nw9mHjOmPIi0Ex6gZjbeSZFqAKc2lKKBNYHRlW4MSKVjXEGWQhMi544jMiNBrX4zdF6s5lQMwZOOVr17s3irI9zDn74Gz01POV1UJZDh": "action_listen"
+  }
+}

@@ -1,0 +1,16 @@
+version: "3.1"
+rules:
+  - rule: Selamlama
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Fiyat Sorgulama
+    steps:
+      - intent: fiyat_sorgula
+      - action: action_fiyat_sorgula
+
+  - rule: SSS Sorgulama
+    steps:
+      - intent: sss_sor
+      - action: action_sss_yanitla

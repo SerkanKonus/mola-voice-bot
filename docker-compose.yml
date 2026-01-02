@@ -1,0 +1,56 @@
+version: '3.8'
+
+services:
+  whisper:
+    image: fedirz/faster-whisper-server:latest-cpu
+    container_name: voice-bot-whisper
+    network_mode: host
+    environment:
+      - WHISPER_MODEL=base
+      - WHISPER_COMPUTE_TYPE=int8  # CPU için hızlandırma (Quantization)
+      - WHISPER_BEAM_SIZE=1        # Hız için 1 yapıyoruz (Varsayılan 5 yavaştır)
+      #- ASR_MODEL=base
+      #- ASR_ENGINE=openai_whisper
+     # İşlemci optimizasyonu (VPS'in kilitlenmesini önler)
+     #- OMP_NUM_THREADS=2
+     #- MKL_NUM_THREADS=2
+    restart: unless-stopped
+
+  rasa:
+    image: rasa/rasa:3.6.2
+    container_name: voice-bot-rasa
+    network_mode: host
+    volumes:
+      - ./rasa:/app
+    command: run --enable-api --cors "*" --debug
+    restart: unless-stopped
+
+  action-server:
+    image: rasa/rasa-sdk:3.6.2
+    container_name: voice-bot-action-server
+    user: root
+    volumes:
+      - ./rasa/actions:/app/actions
+    ports:
+      - "5055:5055"
+    # Önce kütüphaneyi kur, sonra server'ı başlat
+    entrypoint: ["sh", "-c", "pip install requests && python -m rasa_sdk --actions actions"]
+
+  asterisk:
+    build: .
+    container_name: voice-bot-asterisk
+    network_mode: host
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./asterisk_config:/etc/asterisk
+      - ./app:/app
+      - audio-data:/var/lib/asterisk/sounds/custom
+    command: asterisk -fvvv
+    restart: unless-stopped
+    depends_on:
+      - whisper
+      - rasa
+
+volumes:
+  audio-data:

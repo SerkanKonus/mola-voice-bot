@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-kisi",
+      "2": "I-kisi",
+      "3": "L-kisi",
+      "4": "U-kisi",
+      "5": "B-sss_tipi",
+      "6": "I-sss_tipi",
+      "7": "L-sss_tipi",
+      "8": "U-sss_tipi",
+      "9": "B-tarih",
+      "10": "I-tarih",
+      "11": "L-tarih",
+      "12": "U-tarih",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-kisi": 1,
+      "I-kisi": 2,
+      "L-kisi": 3,
+      "U-kisi": 4,
+      "B-sss_tipi": 5,
+      "I-sss_tipi": 6,
+      "L-sss_tipi": 7,
+      "U-sss_tipi": 8,
+      "B-tarih": 9,
+      "I-tarih": 10,
+      "L-tarih": 11,
+      "U-tarih": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-kisi",
+      "2": "I-kisi",
+      "3": "L-kisi",
+      "4": "U-kisi",
+      "5": "B-tarih",
+      "6": "I-tarih",
+      "7": "L-tarih",
+      "8": "U-tarih",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-kisi": 1,
+      "I-kisi": 2,
+      "L-kisi": 3,
+      "U-kisi": 4,
+      "B-tarih": 5,
+      "I-tarih": 6,
+      "L-tarih": 7,
+      "U-tarih": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

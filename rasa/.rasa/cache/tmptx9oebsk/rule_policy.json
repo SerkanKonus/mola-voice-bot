@@ -1,0 +1,42 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"rezervasyon_yap\"}}]": "utter_rezervasyon",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"rezervasyon_yap\"}}, {\"prev_action\": {\"action_name\": \"utter_rezervasyon\"}, \"user\": {\"intent\": \"rezervasyon_yap\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"kahvalti_sor\"}}]": "utter_kahvalti",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"kahvalti_sor\"}}, {\"prev_action\": {\"action_name\": \"utter_kahvalti\"}, \"user\": {\"intent\": \"kahvalti_sor\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"konum_sor\"}}]": "utter_konum",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"konum_sor\"}}, {\"prev_action\": {\"action_name\": \"utter_konum\"}, \"user\": {\"intent\": \"konum_sor\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"fiyat_sorgula\"}}]": "utter_fiyat",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"fiyat_sorgula\"}}, {\"prev_action\": {\"action_name\": \"utter_fiyat\"}, \"user\": {\"intent\": \"fiyat_sorgula\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"imkanlar_sor\"}}]": "utter_imkanlar",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"imkanlar_sor\"}}, {\"prev_action\": {\"action_name\": \"utter_imkanlar\"}, \"user\": {\"intent\": \"imkanlar_sor\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"selam\"}}]": "utter_selam",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"selam\"}}, {\"prev_action\": {\"action_name\": \"utter_selam\"}, \"user\": {\"intent\": \"selam\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"kapat\"}}]": "utter_gulegule",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"kapat\"}}, {\"prev_action\": {\"action_name\": \"utter_gulegule\"}, \"user\": {\"intent\": \"kapat\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"giris_cikis_saati\"}}]": "utter_giris_cikis",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"giris_cikis_saati\"}}, {\"prev_action\": {\"action_name\": \"utter_giris_cikis\"}, \"user\": {\"intent\": \"giris_cikis_saati\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"konum_sor\"}}, {\"prev_action\": {\"action_name\": \"utter_konum\"}, \"user\": {\"intent\": \"konum_sor\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"fiyat_sorgula\"}}, {\"prev_action\": {\"action_name\": \"utter_fiyat\"}, \"user\": {\"intent\": \"fiyat_sorgula\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"imkanlar_sor\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"konum_sor\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"fiyat_sorgula\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"giris_cikis_saati\"}}, {\"prev_action\": {\"action_name\": \"utter_giris_cikis\"}, \"user\": {\"intent\": \"giris_cikis_saati\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"rezervasyon_yap\"}}, {\"prev_action\": {\"action_name\": \"utter_rezervasyon\"}, \"user\": {\"intent\": \"rezervasyon_yap\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"imkanlar_sor\"}}, {\"prev_action\": {\"action_name\": \"utter_imkanlar\"}, \"user\": {\"intent\": \"imkanlar_sor\"}}]",
+      "predicting default action with intent session_start",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"kahvalti_sor\"}}, {\"prev_action\": {\"action_name\": \"utter_kahvalti\"}, \"user\": {\"intent\": \"kahvalti_sor\"}}]",
+      "predicting default action with intent back",
+      "predicting default action with intent restart",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"kahvalti_sor\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"rezervasyon_yap\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"giris_cikis_saati\"}}]"
+    ]
+  }
+}

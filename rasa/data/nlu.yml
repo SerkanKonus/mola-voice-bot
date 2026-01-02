@@ -1,0 +1,58 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Merhaba
+    - Selam
+    - Merhabalar
+    - Merhaba Molly
+    - Hey
+    - Madhava
+    - Sesim geliyor mu?
+    - Orada mısın?
+
+- intent: fiyat_sorgula
+  examples: |
+    - [15 ocak](tarih) tarihinde fiyatlar ne kadar?
+    - [2 kişi](kisi) için ücret ne olur?
+    - [yarın](tarih) için [2 yetişkin](kisi) ne kadar?
+    - [haftaya cumartesi](tarih) konaklama bedeli nedir?
+    - gecelik maliyet nedir?
+    - fiyatlarınız hakkında bilgi alabilir miyim?
+    - [3 kişi](kisi) kalacağız fiyat ne olur?
+
+- intent: sss_sor
+  examples: |
+    - [giriş saati]{"entity": "sss_tipi", "value": "saat"} kaç?
+    - [evcil hayvan]{"entity": "sss_tipi", "value": "hayvan"} yasak mı?
+    - giriş saati kaç?
+    - otelden ne zaman çıkış yapmalıyız?
+    - evcil hayvan kabul ediyor musunuz?
+    - otopark var mı?
+    - havuzlar ayrı mı?
+    - kahvaltı dahil mi?
+    - wi-fi hizmeti var mı?
+
+- intent: etkinlik_sor
+  examples: |
+    - bu hafta konser var mı?
+    - etkinlik takviminde ne var?
+    - tarkan konseri ne zaman?
+    - akşamları bir eğlence oluyor mu?
+    - çocuk kulübü etkinliği var mı?
+
+- intent: out_of_scope
+  examples: |
+    - bugün hava nasıl?
+    - bana bir fıkra anlat
+    - pizza siparişi vermek istiyorum
+    - başka bir otel önerir misin?
+    - siyaset hakkında ne düşünüyorsun?
+
+- intent: goodbye
+  examples: |
+    - görüşürüz
+    - iyi günler
+    - kapatıyorum
+    - teşekkürler bay bay

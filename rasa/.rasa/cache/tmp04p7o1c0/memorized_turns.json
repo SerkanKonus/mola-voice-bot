@@ -1,0 +1,11 @@
+{
+  "lookup": {
+    "eJyLrq6NBQAEOAGx": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taS2NhYA6dwbhQ==": "utter_greet",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taSWgBmlJSWpRfEQpbhMiAUAQvc0lw==": "action_listen",
+    "eJydjkEKgDAMBL+SB/iCfkUkiAQJramkqZeSv1uo94K3HRiGXZsv0G6lB/fDOEuANgbKflGADxIXI+luLaTdYeloAU4lMp80qhkpDvVfYfKCLLIkjliyum8v3uhRYg==": "action_etkinlik_sorgula",
+    "eJydjkEKwCAMBL+SB/QFfqUUkRIkaGOJsRfx7xXsoTdLb7swO+xa2wL1FLys25USG6gjWHYHGnhKpKzInS0ZpTPEvaoBL4jaJo6iimIH+s8weYEaiCMFm5N8VL0nvkQ3k243WdByVQ==": "action_listen",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taSWgBmlJSWpRfEQpeSZQMAVaZmViSXxxflF6aU5ibW1sQAw2FHN": "action_fiyat_sorgula",
+    "eJyLrq7VUaguKEoti09MLsnMz7NSqIYw4vMSc1OtFKCcnMziktQ8oNrS4tQioJrMPCC3xEohvSg1taSWgBmlJSWpRfEQpeSZQMAVaZmViSXxxflF6aU5iUSahaqHkJGxAOdSce0=": "action_listen"
+  }
+}
