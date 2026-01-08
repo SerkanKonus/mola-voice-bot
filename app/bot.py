@@ -102,13 +102,19 @@ def text_to_speech(text):
             f"-af \"silenceremove=start_threshold=-50dB:start_duration=0:stop_threshold=-50dB:stop_duration=0.05:window=1,volume=1.4\" "
             f"-y {filepath_wav} > /dev/null 2>&1"
         )
-        os.system(convert_cmd)
+        ret = os.system(convert_cmd)
+        if ret != 0:
+            log(f"❌ FFmpeg Hatası! Dönüş kodu: {ret}")
+            log(f"Komut: {convert_cmd}")
         
         if os.path.exists(filepath_mp3):
             os.remove(filepath_mp3)
 
         if os.path.exists(filepath_wav):
+            log(f"✅ Ses dosyası oluşturuldu: {filename_base}.wav")
             return f"{CUSTOM_DIR_NAME}/{filename_base}"
+        else:
+            log(f"❌ Ses dosyası OLUŞMADI: {filename_base}.wav")
         return None
 
     except Exception as e:
@@ -183,8 +189,10 @@ for i in range(15):
     log(f"🤖 Bot: {response_text}")
     audio_response = text_to_speech(response_text)
     if audio_response:
+        log(f"🔊 Oynatılıyor (Dosya): {audio_response}")
         agi_cmd(f"STREAM FILE {audio_response} \"\"")
     else:
+        log(f"⚠️ Dosya yok, heceleniyor (SAY ALPHA): {response_text}")
         agi_cmd(f"SAY ALPHA \"{response_text}\" \"\"")
 
 log("🛑 Görüşme Sonlandı.")
