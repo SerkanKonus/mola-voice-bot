@@ -99,7 +99,7 @@ def text_to_speech(text):
         # FFmpeg ile sessizlik budama (akışkanlık için en önemli adım burası)
         convert_cmd = (
             f"ffmpeg -i {filepath_mp3} -ar 8000 -ac 1 "
-            f"-af \"volume=1.5\" "
+            f"-af \"apad=pad_dur=0.1\" "
             f"-y {filepath_wav} > /dev/null 2>&1"
         )
         ret = os.system(convert_cmd)
