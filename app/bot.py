@@ -111,7 +111,14 @@ def text_to_speech(text):
             os.remove(filepath_mp3)
 
         if os.path.exists(filepath_wav):
-            log(f"✅ Ses dosyası oluşturuldu: {filename_base}.wav")
+            import wave
+            import contextlib
+            with contextlib.closing(wave.open(filepath_wav, 'r')) as f:
+                frames = f.getnframes()
+                rate = f.getframerate()
+                duration = frames / float(rate)
+                log(f"✅ Ses dosyası oluşturuldu: {filename_base}.wav (Süre: {duration:.2f}sn)")
+            
             return f"{CUSTOM_DIR_NAME}/{filename_base}"
         else:
             log(f"❌ Ses dosyası OLUŞMADI: {filename_base}.wav")
