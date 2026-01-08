@@ -117,3 +117,8 @@ stories:
       - intent: fiyat_sorgula
       - action: fiyat_form
       - active_loop: fiyat_form
+
+  - story: Pansiyon FAQ Simple
+    steps:
+      - intent: pansiyon_sor
+      - action: action_get_board_comparison
