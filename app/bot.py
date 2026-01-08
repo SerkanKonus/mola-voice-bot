@@ -168,40 +168,52 @@ def get_bot_response(text):
     return ["Şu an cevap veremiyorum."]
 
 # --- AGI BAŞLANGICI ---
-env = {}
-while True:
-    line = sys.stdin.readline().strip()
-    if line == '': break
-    if ':' in line:
-        key, val = line.split(':', 1)
-        env[key] = val.strip()
+if __name__ == "__main__":
+    try:
+        env = {}
+        while True:
+            line = sys.stdin.readline().strip()
+            if line == '': break
+            if ':' in line:
+                key, val = line.split(':', 1)
+                env[key] = val.strip()
 
-log("🤖 Bot Başlatıldı (Fix)")
-agi_cmd("ANSWER")
-time.sleep(0.5)
+        log("🤖 Bot Başlatıldı (Fix)")
+        agi_cmd("ANSWER")
+        time.sleep(0.5)
 
-for i in range(15):
-    unique_id = int(time.time())
-    wav_file = record_audio(f"rec_{unique_id}")
-    if not wav_file: continue
-    text = speech_to_text(wav_file)
-    if not text or len(text) < 2: continue
-    log(f"📝 Algılanan: {text}")
-    if any(word in text.lower() for word in ["kapat", "bay bay", "görüşürüz", "sonlandır"]):
-        bye_path = text_to_speech("Bizi tercih ettiğiniz için teşekkürler, iyi günler dilerim.")
-        if bye_path:
-            agi_cmd(f"STREAM FILE {bye_path} \"\"")
-        break
-    response_texts = get_bot_response(text)
-    for response_text in response_texts:
-        log(f"🤖 Bot: {response_text}")
-        audio_response = text_to_speech(response_text)
-        if audio_response:
-            log(f"🔊 Oynatılıyor (Dosya): {audio_response}")
-            agi_cmd(f"STREAM FILE {audio_response} \"\"")
-        else:
-            log(f"⚠️ Dosya yok, heceleniyor (SAY ALPHA): {response_text}")
-            agi_cmd(f"SAY ALPHA \"{response_text}\" \"\"")
+        for i in range(15):
+            unique_id = int(time.time())
+            wav_file = record_audio(f"rec_{unique_id}")
+            if not wav_file: continue
+            text = speech_to_text(wav_file)
+            if not text or len(text) < 2: continue
+            log(f"📝 Algılanan: {text}")
+            if any(word in text.lower() for word in ["kapat", "bay bay", "görüşürüz", "sonlandır"]):
+                bye_path = text_to_speech("Bizi tercih ettiğiniz için teşekkürler, iyi günler dilerim.")
+                if bye_path:
+                    agi_cmd(f"STREAM FILE {bye_path} \"\"")
+                break
+            
+            response_texts = get_bot_response(text)
+            for response_text in response_texts:
+                log(f"🤖 Bot: {response_text}")
+                audio_response = text_to_speech(response_text)
+                if audio_response:
+                    log(f"🔊 Oynatılıyor (Dosya): {audio_response}")
+                    agi_cmd(f"STREAM FILE {audio_response} \"\"")
+                else:
+                    log(f"⚠️ Dosya yok, heceleniyor (SAY ALPHA): {response_text}")
+                    agi_cmd(f"SAY ALPHA \"{response_text}\" \"\"")
+                
+                # Arka arkaya konuşurken kısa bir es ver (Crash önlemek için)
+                time.sleep(0.2)
 
-log("🛑 Görüşme Sonlandı.")
-agi_cmd("HANGUP")
+        log("🛑 Görüşme Sonlandı.")
+        agi_cmd("HANGUP")
+
+    except Exception as e:
+        import traceback
+        log(f"❌ KRİTİK HATA (CRASH): {e}")
+        log(traceback.format_exc())
+        agi_cmd("HANGUP")
