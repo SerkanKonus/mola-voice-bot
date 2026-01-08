@@ -288,8 +288,8 @@ nlu:
 
 - intent: sss_sor
   examples: |
-    - [giriş saati]{\"entity\": \"sss_tipi\", \"value\": \"saat\"} kaç?
-    - [evcil hayvan]{\"entity\": \"sss_tipi\", \"value\": \"hayvan\"} yasak mı?
+    - giriş saati kaç?
+    - evcil hayvan yasak mı?
     - giriş saati kaç?
     - otelden ne zaman çıkış yapmalıyız?
     - evcil hayvan kabul ediyor musunuz?
