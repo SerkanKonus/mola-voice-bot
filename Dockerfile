@@ -8,6 +8,9 @@ RUN apt-get update && \
     asterisk-core-sounds-en-wav asterisk-core-sounds-en-gsm && \
     apt-get clean
 
+# Validasyon: FFmpeg yüklendi mi? (Build sırasında hata verip dursun)
+RUN ffmpeg -version
+
 # 2. Python kütüphanelerini kur (edge-tts ve requests)
 # Yeni Debian sürümlerinde --break-system-packages gereklidir
 RUN pip3 install --no-cache-dir --break-system-packages requests edge-tts
