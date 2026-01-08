@@ -155,10 +155,10 @@ def get_bot_response(text):
         if r.status_code == 200:
             responses = r.json()
             if responses:
-                return responses[0].get("text", "")
+                return [resp.get("text", "") for resp in responses if "text" in resp]
     except Exception as e:
         log(f"❌ Rasa Hatası: {e}")
-    return "Şu an cevap veremiyorum."
+    return ["Şu an cevap veremiyorum."]
 
 # --- AGI BAŞLANGICI ---
 env = {}
@@ -185,15 +185,16 @@ for i in range(15):
         if bye_path:
             agi_cmd(f"STREAM FILE {bye_path} \"\"")
         break
-    response_text = get_bot_response(text)
-    log(f"🤖 Bot: {response_text}")
-    audio_response = text_to_speech(response_text)
-    if audio_response:
-        log(f"🔊 Oynatılıyor (Dosya): {audio_response}")
-        agi_cmd(f"STREAM FILE {audio_response} \"\"")
-    else:
-        log(f"⚠️ Dosya yok, heceleniyor (SAY ALPHA): {response_text}")
-        agi_cmd(f"SAY ALPHA \"{response_text}\" \"\"")
+    response_texts = get_bot_response(text)
+    for response_text in response_texts:
+        log(f"🤖 Bot: {response_text}")
+        audio_response = text_to_speech(response_text)
+        if audio_response:
+            log(f"🔊 Oynatılıyor (Dosya): {audio_response}")
+            agi_cmd(f"STREAM FILE {audio_response} \"\"")
+        else:
+            log(f"⚠️ Dosya yok, heceleniyor (SAY ALPHA): {response_text}")
+            agi_cmd(f"SAY ALPHA \"{response_text}\" \"\"")
 
 log("🛑 Görüşme Sonlandı.")
 agi_cmd("HANGUP")
