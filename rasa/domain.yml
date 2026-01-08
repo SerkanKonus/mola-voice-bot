@@ -134,7 +134,7 @@ forms:
 
 responses:
   utter_greet:
-    - text: "Merhaba, ben Mola İstanbul müşteri temsilciniz Deniz. Nasıl yardımcı olabilirim?"
+    - text: "Merhaba, ben Mola İstanbul müşteri temsilciniz Molly. Nasıl yardımcı olabilirim?"
   
   utter_goodbye:
     - text: "Bizi tercih ettiğiniz için teşekkürler, iyi günler dilerim!"
