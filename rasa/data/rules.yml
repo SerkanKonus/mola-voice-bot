@@ -27,6 +27,8 @@ rules:
       - action: action_get_room_types
 
   - rule: Pansiyon Tipleri Sorgulama
+    condition:
+      - active_loop: null
     steps:
       - intent: pansiyon_sor
       - action: action_get_board_comparison
