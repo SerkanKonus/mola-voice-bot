@@ -131,6 +131,10 @@ forms:
     required_slots:
       - tarih_baslangic
       - kisi_sayisi
+      - cocuk_yaslari
+      - oda_tipi
+      - pansiyon_tipi
+      - erken_giris_gec_cikis
 
 responses:
   utter_greet:

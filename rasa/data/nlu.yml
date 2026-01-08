@@ -40,7 +40,6 @@ nlu:
     - evet lütfen
     - tabii
     - kesinlikle
-    - hayır
     - peki
     - anlaştık
     - iyi
@@ -136,7 +135,6 @@ nlu:
   examples: |
     - hangi pansiyon seçenekleri var?
     - yarım pansiyon ne demek?
-    - kahvaltı dahil mi?
     - her şey dahil var mı?
     - erken giriş geç çıkış nedir?
     - oda kahvaltı nedir?
@@ -186,7 +184,6 @@ nlu:
     - kaç yaş ücretsiz?
     - çocuklara indirim yapıyor musunuz?
     - çocuk animasyonu var mı?
-    - bebek yatağı var mı?
     - mama sandalyesi veriliyor mu?
     - çocuk menüsü var mı?
     - kids club saatleri?
@@ -210,7 +207,6 @@ nlu:
 
 - intent: tesis_sor
   examples: |
-    - spa var mı?
     - havuz saatleri nedir?
     - fitness merkezi var mı?
     - çocuk kulübü kaç yaşından?
@@ -218,7 +214,6 @@ nlu:
     - restaurant sayısı?
     - bar var mı?
     - plaj var mı?
-    - hamam var mı?
     - sauna mevcut mu?
     - masaj yapılıyor mu?
     - spor salonu açık mı?
@@ -230,11 +225,6 @@ nlu:
 
 - intent: aktivite_sor
   examples: |
-    - bu hafta konser var mı?
-    - etkinlik takviminde ne var?
-    - tarkan konseri ne zaman?
-    - akşamları bir eğlence oluyor mu?
-    - çocuk kulübü etkinliği var mı?
     - animasyon programı?
     - gece gösterileri?
     - canlı müzik var mı?
@@ -290,15 +280,11 @@ nlu:
   examples: |
     - giriş saati kaç?
     - evcil hayvan yasak mı?
-    - giriş saati kaç?
     - otelden ne zaman çıkış yapmalıyız?
-    - evcil hayvan kabul ediyor musunuz?
     - otopark var mı?
     - havuzlar ayrı mı?
-    - kahvaltı dahil mi?
     - wi-fi hizmeti var mı?
     - sigara içilebilir mi?
-    - bebek yatağı var mı?
     - vergiler dahil mi?
     - ekstra ücret var mı?
 
