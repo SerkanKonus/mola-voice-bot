@@ -9,8 +9,8 @@ import edge_tts
 import re
 
 # --- AYARLAR ---
-WHISPER_URL = "http://127.0.0.1:8000/v1/audio/transcriptions"
-RASA_URL = "http://127.0.0.1:5005/webhooks/rest/webhook"
+WHISPER_URL = "http://voice-bot-whisper:8000/v1/audio/transcriptions"
+RASA_URL = "http://voice-bot-rasa:5005/webhooks/rest/webhook"
 BASE_SOUNDS_DIR = "/var/lib/asterisk/sounds"
 CUSTOM_DIR_NAME = "custom"
 FULL_RECORD_DIR = os.path.join(BASE_SOUNDS_DIR, CUSTOM_DIR_NAME)
