@@ -149,8 +149,32 @@ def speech_to_text(filepath):
             r = requests.post(WHISPER_URL, files=files, data=data, timeout=60)
         if r.status_code == 200:
             text = r.json().get("text", "").strip()
-            if text.lower() in ["altyazı", "altyazılar", "subtitle", "transcription"]:
+            
+            # Whisper hallucination filtering
+            hallucinations = [
+                "altyazı", "altyazılar", "subtitle", "transcription",
+                "bu videoyu beğenmeyi", "like and subscribe", 
+                "abone olmayı unutmayın", "beğenmeyi unutmayın"
+            ]
+            
+            text_lower = text.lower()
+            
+            # Check for hallucinations
+            if any(pattern in text_lower for pattern in hallucinations):
+                log(f"⚠️ Whisper Hallucination Detected: {text}")
                 return None
+            
+            # Check for excessive repetition (e.g., "beğenmeyi beğenmeyi beğenmeyi...")
+            words = text.split()
+            if len(words) > 5:
+                # Count most common word
+                from collections import Counter
+                word_counts = Counter(words)
+                most_common_word, count = word_counts.most_common(1)[0]
+                if count > len(words) * 0.4:  # If one word is >40% of text
+                    log(f"⚠️ Excessive Repetition Detected: {text}")
+                    return None
+            
             return text
     except Exception as e:
         log(f"❌ Whisper Hatası: {e}")
@@ -161,8 +185,11 @@ def get_bot_response(text):
         r = requests.post(RASA_URL, json={"sender": "user", "message": text}, timeout=30)
         if r.status_code == 200:
             responses = r.json()
+            log(f"🔍 Rasa Raw Response: {responses}")  # Debug log
             if responses:
                 return [resp.get("text", "") for resp in responses if "text" in resp]
+        else:
+            log(f"❌ Rasa HTTP {r.status_code}: {r.text}")
     except Exception as e:
         log(f"❌ Rasa Hatası: {e}")
     return ["Şu an cevap veremiyorum."]
