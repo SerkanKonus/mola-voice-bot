@@ -162,8 +162,8 @@ responses:
     - text: "Beraberinizdeki çocukların yaşlarını alabilir miyim?"
   
   utter_ask_pansiyon_tipi:
-    - text: "Pansiyon tercihiniz nedir? Sadece Oda, Oda Kahvaltı veya Yarım Pansiyon?"
-    - text: "Hangi pansiyonu tercih edersiniz? Sadece Oda, Oda Kahvaltı ya da Yarım Pansiyon var."
+    - text: "Sadece Oda ve Yarım Pansiyon seçeneklerimiz var. Hangisini tercih edersiniz?"
+    - text: "Pansiyon tipinde Sadece Oda veya Yarım Pansiyon var, hangisini istersiniz?"
   
   utter_ask_erken_giris_gec_cikis:
     - text: "Erken giriş ve geç çıkış (09:00 giriş, ertesi gün 23:00 çıkış) imkanımız var, ilginizi çeker mi?"
@@ -199,6 +199,7 @@ responses:
   utter_default:
     - text: "Tekrar söyler misiniz?"
     - text: "Anlayamadım, başka türlü anlatabilir misiniz?"
+    - text: "Size nasıl yardımcı olabilirim? Rezervasyon, fiyat bilgisi veya tesis hakkında bilgi alabilirsiniz."
   
   utter_spa_genel:
     - text: "SPA alanlarımızda kadın/erkek ayrı Türk hamamı, sauna, terapi havuzları var. 28 çeşit masaj  hizmetimiz mevcut."

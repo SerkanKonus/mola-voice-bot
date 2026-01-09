@@ -275,6 +275,16 @@ nlu:
     - yer ayırtalım
     - book etmek istiyorum
     - online rezervasyon?
+    - yaptırmak istiyorum
+    - yapmak istiyorum
+    - oda rezervasyonu
+    - rezervasyon
+    - rezerve et
+    - ayırt
+    - tutmak istiyorum
+    - oda ayırt
+    - kayıt yaptırmak
+    - oda yaptırmak istiyorum
 
 - intent: sss_sor
   examples: |

@@ -81,3 +81,9 @@ rules:
       - intent: kurumsal_sor
       - action: utter_kurumsal_tanitim
 
+  - rule: Rezervasyon İsteği
+    steps:
+      - intent: rezervasyon_yap
+      - action: utter_checking
+      - action: fiyat_form
+      - active_loop: fiyat_form
