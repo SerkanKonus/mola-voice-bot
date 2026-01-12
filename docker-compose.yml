@@ -1,12 +1,10 @@
-version: '3.8'
-
 services:
   whisper:
     image: fedirz/faster-whisper-server:latest-cpu
     container_name: voice-bot-whisper
     # network_mode: host REMOVED
     environment:
-      - WHISPER_MODEL=base
+      - WHISPER_MODEL=small
       - WHISPER_COMPUTE_TYPE=int8
       - WHISPER_BEAM_SIZE=1
     restart: unless-stopped

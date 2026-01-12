@@ -128,11 +128,38 @@ def text_to_speech(text):
         log(f"❌ TTS Hatası: {e}")
         return None
 
+def preprocess_audio(input_wav):
+    """
+    Ses dosyasını Whisper için optimize eder:
+    - Gürültü azaltma
+    - Ses normalizasyonu
+    - Telefon frekansları dışındaki sesleri filtrele (200Hz - 3000Hz)
+    - 16kHz sample rate (Whisper'ın tercih ettiği)
+    """
+    try:
+        output_wav = input_wav.replace('.wav', '_processed.wav')
+        cmd = (
+            f"ffmpeg -i {input_wav} "
+            f"-af 'highpass=f=200,lowpass=f=3000,afftdn=nf=-25,volume=1.5' "
+            f"-ar 16000 -ac 1 -y {output_wav} > /dev/null 2>&1"
+        )
+        ret = os.system(cmd)
+        if ret == 0 and os.path.exists(output_wav):
+            log(f"✅ Ses ön işleme tamamlandı: {os.path.basename(output_wav)}")
+            return output_wav
+        else:
+            log(f"⚠️ Ses ön işleme başarısız, orijinal dosya kullanılacak")
+            return input_wav
+    except Exception as e:
+        log(f"❌ Ön işleme hatası: {e}")
+        return input_wav
+
 def record_audio(filename):
     log("🎤 Dinliyorum...")
     os.makedirs(FULL_RECORD_DIR, exist_ok=True)
     file_path_no_ext = os.path.join(FULL_RECORD_DIR, filename)
-    cmd = f"RECORD FILE {file_path_no_ext} wav # 4000 0 s=0.6"
+    # 6 saniye kayıt, 0.8 saniye sessizlik eşiği (daha doğal konuşma için)
+    cmd = f"RECORD FILE {file_path_no_ext} wav # 6000 0 s=0.8"
     result = agi_cmd(cmd)
     if "result=-1" in result:
         return None
@@ -142,10 +169,15 @@ def record_audio(filename):
 def speech_to_text(filepath):
     if not os.path.exists(filepath):
         return None
+    
+    # Ses dosyasını ön işleme tabi tut (gürültü azaltma, normalizasyon)
+    processed_filepath = preprocess_audio(filepath)
+    
     try:
-        with open(filepath, 'rb') as f:
+        with open(processed_filepath, 'rb') as f:
             files = {'file': ('audio.wav', f, 'audio/wav')}
-            data = {'model': 'base', 'language': 'tr', 'response_format': 'json'}
+            # Model 'small' olarak güncellenecek (docker-compose.yml'de)
+            data = {'model': 'small', 'language': 'tr', 'response_format': 'json'}
             r = requests.post(WHISPER_URL, files=files, data=data, timeout=60)
         if r.status_code == 200:
             text = r.json().get("text", "").strip()
