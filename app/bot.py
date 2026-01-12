@@ -209,6 +209,17 @@ if __name__ == "__main__":
         agi_cmd("ANSWER")
         time.sleep(0.5)
 
+        # Telefon açılır açılmaz karşılama mesajını söyle
+        greeting_message = "Merhaba, ben Mola İstanbul müşteri temsilciniz Molly. Nasıl yardımcı olabilirim?"
+        log(f"👋 Karşılama mesajı oynatılıyor: {greeting_message}")
+        greeting_audio = text_to_speech(greeting_message)
+        if greeting_audio:
+            agi_cmd(f"STREAM FILE {greeting_audio} \"\"")
+        else:
+            log("⚠️ Karşılama mesajı oluşturulamadı!")
+        
+        time.sleep(0.3)  # Karşılama sonrası kısa bir duraklama
+
         for i in range(15):
             unique_id = int(time.time())
             wav_file = record_audio(f"rec_{unique_id}")
