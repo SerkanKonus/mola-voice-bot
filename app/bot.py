@@ -158,8 +158,8 @@ def record_audio(filename):
     log("🎤 Dinliyorum...")
     os.makedirs(FULL_RECORD_DIR, exist_ok=True)
     file_path_no_ext = os.path.join(FULL_RECORD_DIR, filename)
-    # 6 saniye kayıt, 0.8 saniye sessizlik eşiği (daha doğal konuşma için)
-    cmd = f"RECORD FILE {file_path_no_ext} wav # 6000 0 s=0.8"
+    # 6 saniye kayıt, 0.5 saniye sessizlik eşiği (hızlı yanıt için)
+    cmd = f"RECORD FILE {file_path_no_ext} wav # 6000 0 s=0.5"
     result = agi_cmd(cmd)
     if "result=-1" in result:
         return None
